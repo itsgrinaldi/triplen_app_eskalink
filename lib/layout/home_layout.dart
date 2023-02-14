@@ -13,59 +13,6 @@ class _HomeLayoutState extends State<HomeLayout> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xffF5F5F5),
-      bottomNavigationBar: Container(
-        decoration: BoxDecoration(
-          color: Colors.white,
-        ),
-        child: Row(
-          children: [
-            Expanded(
-              child: InkWell(
-                child: Container(
-                  padding: EdgeInsets.symmetric(vertical: 15.h),
-                  child: Icon(
-                    Icons.home,
-                    color: Color(0xffB6B6B6),
-                  ),
-                ),
-              ),
-            ),
-            Expanded(
-              child: InkWell(
-                child: Container(
-                  padding: EdgeInsets.symmetric(vertical: 15.h),
-                  child: Icon(
-                    Icons.history,
-                    color: Color(0xffB6B6B6),
-                  ),
-                ),
-              ),
-            ),
-            Expanded(
-              child: InkWell(
-                child: Container(
-                  padding: EdgeInsets.symmetric(vertical: 15.h),
-                  child: Icon(
-                    Icons.newspaper,
-                    color: Color(0xffB6B6B6),
-                  ),
-                ),
-              ),
-            ),
-            Expanded(
-              child: InkWell(
-                child: Container(
-                  padding: EdgeInsets.symmetric(vertical: 15.h),
-                  child: Icon(
-                    Icons.account_box,
-                    color: Color(0xffB6B6B6),
-                  ),
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),
       body: SafeArea(
         child: Column(
           children: [

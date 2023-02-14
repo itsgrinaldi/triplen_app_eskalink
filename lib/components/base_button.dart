@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:triplen_app/layout/home_layout.dart';
+import 'package:triplen_app/layout/main_layout.dart';
 
 class BaseButton extends StatelessWidget {
   final String? namaButton;
@@ -12,7 +13,7 @@ class BaseButton extends StatelessWidget {
     return InkWell(
       onTap: () {
         Navigator.of(context)
-            .push(MaterialPageRoute(builder: (context) => HomeLayout()));
+            .push(MaterialPageRoute(builder: (context) => MainLayout()));
       },
       child: Container(
         width: MediaQuery.of(context).size.width,
