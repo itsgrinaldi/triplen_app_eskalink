@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:triplen_app/layout/home_layout.dart';
+import 'package:triplen_app/presentation/layout/home_layout.dart';
 
 class MainLayout extends StatefulWidget {
   MainLayout({Key? key}) : super(key: key);

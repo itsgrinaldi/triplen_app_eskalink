@@ -1,20 +1,18 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:triplen_app/layout/home_layout.dart';
-import 'package:triplen_app/layout/main_layout.dart';
 
 class BaseButton extends StatelessWidget {
   final String? namaButton;
+  final VoidCallback? onTap;
 
-  BaseButton({Key? key, this.namaButton}) : super(key: key);
+  BaseButton({Key? key, this.namaButton, this.onTap}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {
-        Navigator.of(context)
-            .push(MaterialPageRoute(builder: (context) => MainLayout()));
-      },
+      onTap: onTap,
       child: Container(
         width: MediaQuery.of(context).size.width,
         height: 55.h,

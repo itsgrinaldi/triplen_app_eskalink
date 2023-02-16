@@ -39,6 +39,8 @@ dependencies:
     version: ^0.0.0
   intl: any
   flutter_screenutil: any
+  dio: any
+  flutter_bloc: ^8.1.2
 
 dev_dependencies:
   flutter_test:
