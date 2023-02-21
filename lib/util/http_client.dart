@@ -39,4 +39,8 @@ class HttpClient {
       return handler.next(e);
     }));
   }
+
+  void setBearerFromLogin(String token) {
+    dio.options.headers["Authorization"] = "Bearer " + token;
+  }
 }

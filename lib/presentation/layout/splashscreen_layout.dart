@@ -1,7 +1,10 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:triplen_app/presentation/layout/login_layout.dart';
+import 'package:triplen_app/presentation/layout/main_layout.dart';
+import 'package:triplen_app/di.dart';
 
 class SplashScreen extends StatefulWidget {
   SplashScreen({Key? key}) : super(key: key);
@@ -11,13 +14,24 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+  late SharedPreferences preferences;
+
   @override
   void initState() {
+    preferences = sl<SharedPreferences>();
+
     const current = Duration(seconds: 3);
     Timer(
         current,
-        () => Navigator.of(context)
-            .push(MaterialPageRoute(builder: (context) => LoginLayout())));
+        () {
+          if (preferences.getString("isLogin") == "1") {
+            Navigator.of(context)
+                .push(MaterialPageRoute(builder: (context) => MainLayout()));
+          } else {
+            Navigator.of(context)
+                .push(MaterialPageRoute(builder: (context) => LoginLayout()));
+          }
+        });
     super.initState();
   }
 

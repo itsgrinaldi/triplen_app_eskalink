@@ -41,6 +41,8 @@ dependencies:
   flutter_screenutil: any
   dio: any
   flutter_bloc: ^8.1.2
+  shared_preferences: ^2.0.17
+  get_it: ^7.2.0
 
 dev_dependencies:
   flutter_test:

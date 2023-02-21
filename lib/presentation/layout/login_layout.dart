@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:triplen_app/di.dart';
 import 'package:triplen_app/presentation/bloc/auth/auth_cubit.dart';
 import 'package:triplen_app/presentation/components/alert_dialog.dart';
 import 'package:triplen_app/presentation/components/base_button.dart';
@@ -20,7 +21,7 @@ class _LoginLayoutState extends State<LoginLayout> {
 
   @override
   void initState() {
-    authCubit = AuthCubit();
+    authCubit = sl<AuthCubit>();
     super.initState();
   }
 

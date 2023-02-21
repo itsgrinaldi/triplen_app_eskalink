@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:triplen_app/di.dart' as di;
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:triplen_app/presentation/layout/splashscreen_layout.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await di.init();
   runApp(const MyApp());
 }
 
@@ -23,7 +27,7 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(
             primarySwatch: Colors.blue,
           ),
-          localizationsDelegates: [
+          localizationsDelegates: const [
             GlobalMaterialLocalizations.delegate,
             GlobalWidgetsLocalizations.delegate,
             GlobalCupertinoLocalizations.delegate,
@@ -34,7 +38,7 @@ class MyApp extends StatelessWidget {
               child: child!,
             );
           },
-          supportedLocales: [
+          supportedLocales: const [
             Locale('en'), // English
             Locale('es'), // Spanish
           ],
